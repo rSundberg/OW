@@ -1,26 +1,22 @@
-import React, {Component} from 'react';
-import {render} from 'react-dom';
-var Rebase = require('re-base');
-import styles from '../styles/home.css';
+import React, {Component} from 'react'
+import {render} from 'react-dom'
+import Styles from '../styles/home.css'
+import Base from '../components/firebase/config.jsx'
 
-var base = Rebase.createClass({
-  apiKey: "AIzaSyDXkUUzDuNKMB8AClYWcYhG_NfBppzXX-I",
-  authDomain: "oliver-wyatt.firebaseapp.com",
-  databaseURL: "https://oliver-wyatt.firebaseio.com",
-  storageBucket: "oliver-wyatt.appspot.com",
-  messagingSenderId: "697016236096"
-}, 'myApp')
+import Logo from '../components/logo/logo.jsx'
+import Navbar from '../components/navbar/navbar.jsx'
 
-console.log(base)
+console.log(Base)
 
-class Hello extends Component {
-    render() {
-        return (
-            <div className={styles.header}>
-              hello!
-            </div>
-        )
-    }
+class Home extends Component {
+  render() {
+    return (
+      <div>
+        <Logo/>
+        <Navbar/>
+      </div>
+    )
+  }
 }
 
-render(<Hello/>, document.getElementById('root'))
+render(<Home/>, document.getElementById('root'))

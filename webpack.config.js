@@ -21,6 +21,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        exclude: /node_modules/,
+        use: 'file-loader',
+        query: {
+          name: '[name].[ext]'
+        }
+      },
+      {
         test: /\.jsx?$/,
         use: [{
           loader: "babel-loader"
