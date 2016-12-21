@@ -10,14 +10,24 @@
 }
 
 .logo {
-  height: 100px;
+  width: 300px;
+  height: 70px;
   font-family: 'Cookie', cursive;
   color: black;
   margin: 0;
   font-size: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
 }
 
 .navItem {
-  height: 100px;
+  width: 300px;
+  height: 70px;
   font-family: 'Lora', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
 }

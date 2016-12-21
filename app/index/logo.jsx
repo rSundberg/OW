@@ -12,7 +12,7 @@ class Logo extends Component {
     this.state = {
       container: document.querySelector(`.${Styles.container}`),
       logo: document.querySelector(`.${Styles.logo}`),
-      navItem: document.querySelector(`.${Styles.navItem}`)
+      navItem: document.querySelectorAll(`.${Styles.navItem}`)
     }
 
     let setPos = (e) => {
@@ -24,7 +24,7 @@ class Logo extends Component {
         transformPerspective: 600
       });
       TweenMax.to(this.state.logo, .3, {y: y, x: x, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut})
-      TweenMax.to(this.state.navItem, .8, {y: y, x: x, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut})
+      TweenMax.staggerTo(this.state.navItem, .8, {y: y, x: x, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut}, 0.1)
     }
 
     document.addEventListener('mousemove', setPos, false);
@@ -35,6 +35,7 @@ class Logo extends Component {
       <div className={`${Styles.container}`}>
         <div className={`${Styles.logo}`} id={"logo"}>Oliver Wyatt</div>
         <NavItem class={`${Styles.navItem}`} name="ONLINE BOUTIQUE"/>
+        <NavItem class={`${Styles.navItem}`} name="PERSONAL FEED"/>
       </div>
     )
   }
