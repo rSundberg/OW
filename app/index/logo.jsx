@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Styles from './logo.css';
 
+import NavItem from './navItem.jsx'
+
 class Logo extends Component {
   constructor(props) {
     super(props)
@@ -9,7 +11,8 @@ class Logo extends Component {
   componentDidMount() {
     this.state = {
       container: document.querySelector(`.${Styles.container}`),
-      logo: document.querySelector(`.${Styles.logo}`)
+      logo: document.querySelector(`.${Styles.logo}`),
+      navItem: document.querySelector(`.${Styles.navItem}`)
     }
 
     let setPos = (e) => {
@@ -18,9 +21,10 @@ class Logo extends Component {
           rotX = ((-35)+(e.clientX/20)),
           rotY = ((35)-(e.clientY/10))
       TweenMax.set(this.state.logo, {
-        transformPerspective: 400
+        transformPerspective: 600
       });
       TweenMax.to(this.state.logo, .3, {y: y, x: x, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut})
+      TweenMax.to(this.state.navItem, .8, {y: y, x: x, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut})
     }
 
     document.addEventListener('mousemove', setPos, false);
@@ -29,7 +33,8 @@ class Logo extends Component {
   render() {
     return (
       <div className={`${Styles.container}`}>
-        <h1 className={`${Styles.logo}`} id={"logo"}>Oliver Wyatt</h1>
+        <div className={`${Styles.logo}`} id={"logo"}>Oliver Wyatt</div>
+        <NavItem class={`${Styles.navItem}`} name="ONLINE BOUTIQUE"/>
       </div>
     )
   }
