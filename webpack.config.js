@@ -7,8 +7,7 @@ module.exports = {
   devtool: 'eval-source-map',
   context: __dirname + '/app',
   entry: {
-    home: "./templates/home.jsx",
-    shop: "./templates/shop.jsx"
+    home: "./index/home.jsx"
   },
   output: {
     path: __dirname + "/dist/assets",
