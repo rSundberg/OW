@@ -19,9 +19,14 @@ class Logo extends Component {
       let x = ((e.clientX/20) - (window.innerWidth / 40)),
           y = ((e.clientY/20) - (window.innerHeight / 40)),
           rotX = ((-35)+(e.clientX/20)),
-          rotY = ((35)-(e.clientY/10))
+          rotY = ((35)-(e.clientY/15))
       TweenMax.set(this.state.logo, {
-        transformPerspective: 600
+        transformPerspective: 600,
+        transformStyle:"preserve-3d"
+      });
+      TweenMax.set(this.state.navItem, {
+        transformPerspective: 600,
+        transformStyle:"preserve-3d"
       });
       TweenMax.to(this.state.logo, .3, {y: y, x: x, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut})
       TweenMax.staggerTo(this.state.navItem, .8, {y: y, x: x, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut}, 0.1)

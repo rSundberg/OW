@@ -31,6 +31,24 @@ module.exports = {
           "style-loader",
           {loader: "css-loader", options: {modules: true}}
         ],
+      },
+      {
+        test: /.*\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack',
+            query: {
+              progressive: true,
+              optimizationLevel: 7,
+              interlaced: false,
+              pngquant: {
+                quality: '65-90',
+                speed: 4
+              }
+            }
+          }
+        ]
       }
     ],
   },
