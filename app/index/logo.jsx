@@ -16,13 +16,12 @@ class Logo extends Component {
     }
 
     let setPos = (e) => {
-      
+
       let x = e.clientX/window.innerWidth * 100,
           y = e.clientY/window.innerHeight * 100,
           rotX = x - 50,
           rotY = 50 - y
-
-          console.log("x: " + x + "y: " + y)
+          
       TweenMax.set(this.state.logo, {
         transformPerspective: 600,
         transformStyle:"preserve-3d"
