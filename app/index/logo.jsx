@@ -11,30 +11,44 @@ class Logo extends Component {
   componentDidMount() {
     this.state = {
       container: document.querySelector(`.${Styles.container}`),
+      divider: document.querySelector(`.${Styles.divider}`),
       logo: document.querySelector(`.${Styles.logo}`),
       navItem: document.querySelectorAll(`.${Styles.navItem}`)
     }
 
     TweenMax.set(this.state.logo, {
-      transformPerspective: 600,
+      transformPerspective: 100,
       transformStyle:"preserve-3d"
-    });
+    })
 
     TweenMax.set(this.state.navItem, {
-      transformPerspective: 600,
+      transformPerspective: 100,
       transformStyle:"preserve-3d"
-    });
+    })
 
-    let setPos = (e) => {
+    TweenMax.set(this.state.divider, {
+      opacity: .6
+    })
+
+    const setPos = (e) => {
 
       let x = (e.clientX/window.innerWidth * 100),
           y = (e.clientY/window.innerHeight * 100),
           moveX = x - 50,
           moveY = y - 50,
-          rotX = (x - 50)/2,
-          rotY = (50 - y)/2
+          rotX = (x - 50)/4,
+          rotY = (50 - y)/4
+
+      if (x < 5 || x > 95) {
+        TweenMax.to(this.state.divider, 1 , {opacity:.6})
+      } else if (y < 5 || y > 95) {
+        TweenMax.to(this.state.divider, 1, {opacity:.6})
+      } else {
+        TweenMax.to(this.state.divider, 1 , {opacity:0})
+      }
+
       TweenMax.to(this.state.logo, .6, {y: moveY, x: moveX, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut})
-      TweenMax.staggerTo(this.state.navItem, .6, {delay: .1, y: moveY, x: moveX, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut}, 0.1)
+      TweenMax.staggerTo(this.state.navItem, .6, {delay: .1, y: moveY, x: moveX, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut}, .1)
     }
 
     document.addEventListener('mousemove', setPos, false);
@@ -44,6 +58,7 @@ class Logo extends Component {
     return (
       <div>
         <div className={`${Styles.container}`}>
+          <div className={`${Styles.divider}`}></div>
           <div className={`${Styles.logo}`} id={"logo"}>Oliver Wyatt</div>
           <div className={`${Styles.navbar}`}>
             <NavItem class={`${Styles.navItem}`} name="ONLINE BOUTIQUE"/>
