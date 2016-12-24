@@ -30,6 +30,12 @@ class Logo extends Component {
       opacity: .6
     })
 
+    TweenMax.from(this.state.navItem, .5, {
+      height: 0,
+      width: 500,
+      opacity: 0,
+      ease: Power2.easeOut
+    })
     const setPos = (e) => {
 
       let x = (e.clientX/window.innerWidth * 100),
@@ -59,7 +65,7 @@ class Logo extends Component {
       <div>
         <div className={`${Styles.container}`}>
           <div className={`${Styles.divider}`}></div>
-          <div className={`${Styles.logo}`} id={"logo"}>Oliver Wyatt</div>
+          <div className={`${Styles.logo}`}>Oliver Wyatt</div>
           <div className={`${Styles.navbar}`}>
             <NavItem class={`${Styles.navItem}`} name="ONLINE BOUTIQUE"/>
             <NavItem class={`${Styles.navItem}`} name="PERSONAL FEED"/>

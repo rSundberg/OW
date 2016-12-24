@@ -53,4 +53,5 @@
   cursor: default;
   color: white;
   z-index: 100;
+  overflow: hidden;
 }
