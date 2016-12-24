@@ -16,10 +16,13 @@ class Logo extends Component {
     }
 
     let setPos = (e) => {
-      let x = ((e.clientX/20) - (window.innerWidth / 40)),
-          y = ((e.clientY/20) - (window.innerHeight / 40)),
-          rotX = ((-35)+(e.clientX/20)),
-          rotY = ((35)-(e.clientY/15))
+      
+      let x = e.clientX/window.innerWidth * 100,
+          y = e.clientY/window.innerHeight * 100,
+          rotX = x - 50,
+          rotY = 50 - y
+
+          console.log("x: " + x + "y: " + y)
       TweenMax.set(this.state.logo, {
         transformPerspective: 600,
         transformStyle:"preserve-3d"
@@ -28,6 +31,7 @@ class Logo extends Component {
         transformPerspective: 600,
         transformStyle:"preserve-3d"
       });
+
       TweenMax.to(this.state.logo, .3, {y: y, x: x, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut})
       TweenMax.staggerTo(this.state.navItem, .8, {y: y, x: x, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut}, 0.1)
     }
@@ -37,10 +41,14 @@ class Logo extends Component {
 
   render() {
     return (
-      <div className={`${Styles.container}`}>
-        <div className={`${Styles.logo}`} id={"logo"}>Oliver Wyatt</div>
-        <NavItem class={`${Styles.navItem}`} name="ONLINE BOUTIQUE"/>
-        <NavItem class={`${Styles.navItem}`} name="PERSONAL FEED"/>
+      <div>
+        <div className={`${Styles.container}`}>
+          <div className={`${Styles.logo}`} id={"logo"}>Oliver Wyatt</div>
+          <div className={`${Styles.navbar}`}>
+            <NavItem class={`${Styles.navItem}`} name="ONLINE BOUTIQUE"/>
+            <NavItem class={`${Styles.navItem}`} name="PERSONAL FEED"/>
+          </div>
+        </div>
       </div>
     )
   }

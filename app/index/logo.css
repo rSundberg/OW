@@ -19,7 +19,7 @@
   font-family: 'Cookie', cursive;
   color: black;
   margin: 0;
-  font-size: 52px;
+  font-size: 72px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,8 +27,13 @@
   color: white;
 }
 
+.navbar {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
 .navItem {
-  width: 300px;
+  width: 180px;
   height: 70px;
   font-family: 'Lora', serif;
   display: flex;
