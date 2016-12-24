@@ -19,7 +19,7 @@ class Logo extends Component {
       transformPerspective: 600,
       transformStyle:"preserve-3d"
     });
-    
+
     TweenMax.set(this.state.navItem, {
       transformPerspective: 600,
       transformStyle:"preserve-3d"
@@ -27,13 +27,15 @@ class Logo extends Component {
 
     let setPos = (e) => {
 
-      let x = e.clientX/window.innerWidth * 100,
-          y = e.clientY/window.innerHeight * 100,
+      let x = (e.clientX/window.innerWidth * 100),
+          y = (e.clientY/window.innerHeight * 100),
+          moveX = x - 50,
+          moveY = y - 50,
           rotX = x - 50,
           rotY = 50 - y
-
-      TweenMax.to(this.state.logo, .3, {y: y, x: x, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut})
-      TweenMax.staggerTo(this.state.navItem, .8, {y: y, x: x, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut}, 0.1)
+          console.log(x, y)
+      TweenMax.to(this.state.logo, .3, {y: moveY, x: moveX, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut})
+      TweenMax.staggerTo(this.state.navItem, .8, {y: moveY, x: moveX, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut}, 0.1)
     }
 
     document.addEventListener('mousemove', setPos, false);
@@ -43,11 +45,9 @@ class Logo extends Component {
     return (
       <div>
         <div className={`${Styles.container}`}>
+          <NavItem class={`${Styles.navItem}`} name="ONLINE BOUTIQUE"/>
           <div className={`${Styles.logo}`} id={"logo"}>Oliver Wyatt</div>
-          <div className={`${Styles.navbar}`}>
-            <NavItem class={`${Styles.navItem}`} name="ONLINE BOUTIQUE"/>
-            <NavItem class={`${Styles.navItem}`} name="PERSONAL FEED"/>
-          </div>
+          <NavItem class={`${Styles.navItem}`} name="PERSONAL FEED"/>
         </div>
       </div>
     )
