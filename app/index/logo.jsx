@@ -15,21 +15,22 @@ class Logo extends Component {
       navItem: document.querySelectorAll(`.${Styles.navItem}`)
     }
 
+    TweenMax.set(this.state.logo, {
+      transformPerspective: 600,
+      transformStyle:"preserve-3d"
+    });
+    
+    TweenMax.set(this.state.navItem, {
+      transformPerspective: 600,
+      transformStyle:"preserve-3d"
+    });
+
     let setPos = (e) => {
 
       let x = e.clientX/window.innerWidth * 100,
           y = e.clientY/window.innerHeight * 100,
           rotX = x - 50,
           rotY = 50 - y
-          
-      TweenMax.set(this.state.logo, {
-        transformPerspective: 600,
-        transformStyle:"preserve-3d"
-      });
-      TweenMax.set(this.state.navItem, {
-        transformPerspective: 600,
-        transformStyle:"preserve-3d"
-      });
 
       TweenMax.to(this.state.logo, .3, {y: y, x: x, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut})
       TweenMax.staggerTo(this.state.navItem, .8, {y: y, x: x, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut}, 0.1)
