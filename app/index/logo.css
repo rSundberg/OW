@@ -2,8 +2,9 @@
   position: relative;
   width: 100vw;
   height: 100vh;
+  text-align: center;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   background-image: url('../images/bg.jpg');
@@ -13,6 +14,8 @@
 }
 
 .logo {
+  width: 300px;
+  height: 70px;
   font-family: 'Cookie', cursive;
   color: black;
   margin: 0;
@@ -24,7 +27,14 @@
   color: white;
 }
 
+.navbar {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
 .navItem {
+  width: 180px;
+  height: 70px;
   font-family: 'Lora', serif;
   display: flex;
   justify-content: center;
