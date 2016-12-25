@@ -38,15 +38,38 @@
   z-index: 300;
 }
 
+.greets {
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .navbar {
   display: flex;
   flex-flow: row nowrap;
 }
 
+.greeting {
+  width: 200px;
+  height: 180px;
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  color: white;
+  z-index: 300;
+  overflow: hidden;
+}
+
 .navItem {
-  width: 180px;
+  width: 200px;
   height: 70px;
   font-family: 'Lora', serif;
+  font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;

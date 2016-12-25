@@ -6,8 +6,6 @@ import Normalize from 'normalize.css'
 
 import Logo from './logo.jsx'
 
-console.log(Base)
-
 class Home extends Component {
   constructor() {
     super()

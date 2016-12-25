@@ -13,7 +13,8 @@ class Logo extends Component {
       container: document.querySelector(`.${Styles.container}`),
       divider: document.querySelector(`.${Styles.divider}`),
       logo: document.querySelector(`.${Styles.logo}`),
-      navItem: document.querySelectorAll(`.${Styles.navItem}`)
+      navItem: document.querySelectorAll(`.${Styles.navItem}`),
+      greeting: document.querySelectorAll(`.${Styles.greeting}`)
     }
 
     TweenMax.set(this.state.logo, {
@@ -46,29 +47,64 @@ class Logo extends Component {
           rotY = (50 - y)/4
 
       if (x < 5 || x > 95 || y < 5 || y > 95) {
-        TweenMax.to(this.state.divider, 1 , {opacity:.6})
-        TweenMax.to(this.state.navItem, .5, {
+
+        TweenMax.to(this.state.divider, 1 , {
+          opacity:.6
+        })
+
+        TweenMax.to(this.state.navItem, .6, {
           height: 0,
           width: 500,
           opacity: 0,
           ease: Power2.easeOut
         })
+
+        TweenMax.to(this.state.greeting, .6, {
+          height: 180,
+          opacity: 1
+        })
+
         TweenMax.to(this.state.logo, .6, {
           x: 0,
           y: 0,
           rotationY: 0,
           rotationX: 0
         })
+
       } else {
-        TweenMax.to(this.state.divider, 1 , {opacity:0})
-        TweenMax.to(this.state.navItem, .5, {
+
+        TweenMax.to(this.state.divider, 1 , {
+          opacity:0
+        })
+
+        TweenMax.to(this.state.navItem, .6, {
           height: 70,
           width: 180,
           opacity: 1,
           ease: Power2.easeOut
         })
-        TweenMax.to(this.state.logo, .6, {y: moveY, x: moveX, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut})
-        TweenMax.staggerTo(this.state.navItem, .6, {delay: .1, y: moveY, x: moveX, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut}, .1)
+
+        TweenMax.to(this.state.greeting, .6, {
+          height: 300,
+          opacity: 0
+        })
+
+        TweenMax.to(this.state.logo, .6, {
+          y: moveY,
+          x: moveX,
+          rotationY: rotX,
+          rotationX: rotY,
+          ease: Sine.easeOut
+        })
+
+        TweenMax.staggerTo(this.state.navItem, .6, {
+          delay: .1,
+          y: moveY,
+          x: moveX,
+          rotationY: rotX,
+          rotationX: rotY,
+          ease: Sine.easeOut
+        }, .1)
       }
     }
 
@@ -79,8 +115,13 @@ class Logo extends Component {
     return (
       <div>
         <div className={`${Styles.container}`}>
-          <div className={`${Styles.divider}`}></div>
+          <div className={`${Styles.divider}`}>
+          </div>
           <div className={`${Styles.logo}`}>Oliver Wyatt</div>
+            <div className={`${Styles.greets}`}>
+              <div className={`${Styles.greeting}`}>Welcome to</div>
+              <div className={`${Styles.greeting}`}>Original</div>
+            </div>
           <div className={`${Styles.navbar}`}>
             <NavItem class={`${Styles.navItem}`} name="ONLINE BOUTIQUE"/>
             <NavItem class={`${Styles.navItem}`} name="PERSONAL FEED"/>
