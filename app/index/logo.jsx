@@ -120,17 +120,17 @@ class Logo extends Component {
             <NavItem class={`${Styles.navItem}`} name="ONLINE BOUTIQUE"/>
             <NavItem class={`${Styles.navItem}`} name="PERSONAL FEED"/>
           </div>
-          <div className={`${Styles.divider}`}>
-            <div className={`${Styles.greets}`}>
-              <div className={`${Styles.greeting}`}>Welcome to</div>
-              <div className={`${Styles.greeting}`}>Original</div>
-            </div>
+          <div className={`${Styles.greets}`}>
+            <div className={`${Styles.greeting}`}>Welcome to</div>
+            <div className={`${Styles.greeting}`}>Original</div>
           </div>
         </div>
+
+        <div className={`${Styles.divider}`}></div>
+        <div className={`${Styles.background}`}></div>
       </div>
     )
   }
 }
-
 
 export default Logo
