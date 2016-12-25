@@ -1,7 +1,8 @@
 'use strict'
 
 const webpack = require('webpack');
-var path = require('path');
+const path = require('path');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -29,7 +30,11 @@ module.exports = {
         test: /\.css$/,
         use: [
           "style-loader",
-          {loader: "css-loader", options: {modules: true}}
+          {
+            loader: "css-loader",
+            options: { modules: true }
+          },
+          'postcss-loader'
         ],
       },
       {
@@ -64,5 +69,14 @@ module.exports = {
       filename: "commons.js",
       minChunks: 2,
     }),
-  ]
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: [
+          autoprefixer({
+              browsers: ['last 2 version']
+          })
+        ]
+      }
+    })
+]
 }

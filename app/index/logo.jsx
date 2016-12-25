@@ -115,16 +115,16 @@ class Logo extends Component {
     return (
       <div>
         <div className={`${Styles.container}`}>
-          <div className={`${Styles.divider}`}>
-          </div>
           <div className={`${Styles.logo}`}>Oliver Wyatt</div>
+          <div className={`${Styles.navbar}`}>
+            <NavItem class={`${Styles.navItem}`} name="ONLINE BOUTIQUE"/>
+            <NavItem class={`${Styles.navItem}`} name="PERSONAL FEED"/>
+          </div>
+          <div className={`${Styles.divider}`}>
             <div className={`${Styles.greets}`}>
               <div className={`${Styles.greeting}`}>Welcome to</div>
               <div className={`${Styles.greeting}`}>Original</div>
             </div>
-          <div className={`${Styles.navbar}`}>
-            <NavItem class={`${Styles.navItem}`} name="ONLINE BOUTIQUE"/>
-            <NavItem class={`${Styles.navItem}`} name="PERSONAL FEED"/>
           </div>
         </div>
       </div>
