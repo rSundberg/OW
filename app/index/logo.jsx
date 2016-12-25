@@ -30,12 +30,10 @@ class Logo extends Component {
       opacity: .6
     })
 
-    TweenMax.from(this.state.navItem, .5, {
-      delay: 1,
+    TweenMax.set(this.state.navItem, {
       height: 0,
       width: 500,
-      opacity: 0,
-      ease: Power2.easeOut
+      opacity: 0
     })
     const setPos = (e) => {
 
