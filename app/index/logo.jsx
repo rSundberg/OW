@@ -44,27 +44,28 @@ class Logo extends Component {
           moveX = x - 50,
           moveY = y - 50,
           rotX = (x - 50)/4,
-          rotY = (50 - y)/4
+          rotY = (50 - y)/4,
+          animationSpeed = .6;
 
       if (x < 5 || x > 95 || y < 5 || y > 95) {
 
-        TweenMax.to(this.state.divider, 1 , {
-          opacity:.6
+        TweenMax.to(this.state.divider, animationSpeed , {
+          opacity: .6
         })
 
-        TweenMax.to(this.state.navItem, .6, {
+        TweenMax.to(this.state.navItem, animationSpeed, {
           height: 0,
           width: 500,
           opacity: 0,
           ease: Power2.easeOut
         })
 
-        TweenMax.to(this.state.greeting, .6, {
+        TweenMax.to(this.state.greeting, animationSpeed, {
           height: 180,
           opacity: 1
         })
 
-        TweenMax.to(this.state.logo, .6, {
+        TweenMax.to(this.state.logo, animationSpeed, {
           x: 0,
           y: 0,
           rotationY: 0,
@@ -73,23 +74,23 @@ class Logo extends Component {
 
       } else {
 
-        TweenMax.to(this.state.divider, 1 , {
+        TweenMax.to(this.state.divider, animationSpeed, {
           opacity:0
         })
 
-        TweenMax.to(this.state.navItem, .6, {
+        TweenMax.to(this.state.navItem, animationSpeed, {
           height: 70,
           width: 180,
           opacity: 1,
           ease: Power2.easeOut
         })
 
-        TweenMax.to(this.state.greeting, .6, {
+        TweenMax.to(this.state.greeting, animationSpeed, {
           height: 300,
           opacity: 0
         })
 
-        TweenMax.to(this.state.logo, .6, {
+        TweenMax.to(this.state.logo, animationSpeed, {
           y: moveY,
           x: moveX,
           rotationY: rotX,
@@ -97,7 +98,7 @@ class Logo extends Component {
           ease: Sine.easeOut
         })
 
-        TweenMax.staggerTo(this.state.navItem, .6, {
+        TweenMax.staggerTo(this.state.navItem, animationSpeed, {
           delay: .1,
           y: moveY,
           x: moveX,
