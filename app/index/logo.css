@@ -6,6 +6,8 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  z-index: 3000;
+  overflow: hidden;
 }
 
 .divider {
@@ -15,7 +17,7 @@
   top: 0;
   left: 0;
   background-color: black;
-  z-index: 0;
+  z-index: 1;
 }
 
 .background {
@@ -28,7 +30,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  z-index: -1000;
+  z-index: 0;
 }
 
 .logo {
@@ -48,6 +50,10 @@
 
 .greets {
   position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
   display: flex;
   flex-flow: column;
   justify-content: center;
