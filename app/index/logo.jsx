@@ -48,10 +48,28 @@ class Logo extends Component {
 
       if (x < 5 || x > 95) {
         TweenMax.to(this.state.divider, 1 , {opacity:.6})
+        TweenMax.to(this.state.navItem, .5, {
+          height: 0,
+          width: 500,
+          opacity: 0,
+          ease: Power2.easeOut
+        })
       } else if (y < 5 || y > 95) {
         TweenMax.to(this.state.divider, 1, {opacity:.6})
+        TweenMax.to(this.state.navItem, .5, {
+          height: 0,
+          width: 500,
+          opacity: 0,
+          ease: Power2.easeOut
+        })
       } else {
         TweenMax.to(this.state.divider, 1 , {opacity:0})
+        TweenMax.to(this.state.navItem, .5, {
+          height: 70,
+          width: 180,
+          opacity: 1,
+          ease: Power2.easeOut
+        })
       }
 
       TweenMax.to(this.state.logo, .6, {y: moveY, x: moveX, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut})
