@@ -35,6 +35,7 @@ class Logo extends Component {
       width: 500,
       opacity: 0
     })
+
     const setPos = (e) => {
 
       let x = (e.clientX/window.innerWidth * 100),
@@ -44,7 +45,7 @@ class Logo extends Component {
           rotX = (x - 50)/4,
           rotY = (50 - y)/4
 
-      if (x < 5 || x > 95) {
+      if (x < 5 || x > 95 || y < 5 || y > 95) {
         TweenMax.to(this.state.divider, 1 , {opacity:.6})
         TweenMax.to(this.state.navItem, .5, {
           height: 0,
@@ -52,13 +53,11 @@ class Logo extends Component {
           opacity: 0,
           ease: Power2.easeOut
         })
-      } else if (y < 5 || y > 95) {
-        TweenMax.to(this.state.divider, 1, {opacity:.6})
-        TweenMax.to(this.state.navItem, .5, {
-          height: 0,
-          width: 500,
-          opacity: 0,
-          ease: Power2.easeOut
+        TweenMax.to(this.state.logo, .6, {
+          x: 0,
+          y: 0,
+          rotationY: 0,
+          rotationX: 0
         })
       } else {
         TweenMax.to(this.state.divider, 1 , {opacity:0})
@@ -68,10 +67,9 @@ class Logo extends Component {
           opacity: 1,
           ease: Power2.easeOut
         })
+        TweenMax.to(this.state.logo, .6, {y: moveY, x: moveX, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut})
+        TweenMax.staggerTo(this.state.navItem, .6, {delay: .1, y: moveY, x: moveX, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut}, .1)
       }
-
-      TweenMax.to(this.state.logo, .6, {y: moveY, x: moveX, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut})
-      TweenMax.staggerTo(this.state.navItem, .6, {delay: .1, y: moveY, x: moveX, rotationY: rotX, rotationX: rotY, ease: Sine.easeOut}, .1)
     }
 
     document.addEventListener('mousemove', setPos, false);
