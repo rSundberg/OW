@@ -31,6 +31,7 @@ class Logo extends Component {
     })
 
     TweenMax.from(this.state.navItem, .5, {
+      delay: 1,
       height: 0,
       width: 500,
       opacity: 0,
