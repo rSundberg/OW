@@ -1867,7 +1867,7 @@ find-versions@^1.0.0:
     meow "^3.5.0"
     semver-regex "^1.0.0"
 
-firebase, firebase@^3.5.2:
+firebase:
   version "3.6.3"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-3.6.3.tgz#ab9f80fd133ae824cc03f9ea72dd33bf4bb30002"
   dependencies:
@@ -3814,12 +3814,6 @@ rc@^1.1.2, rc@~1.1.6:
     minimist "^1.2.0"
     strip-json-comments "~1.0.4"
 
-re-base:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/re-base/-/re-base-2.5.1.tgz#f49b7e6255dfe931e5af0e43e59bb1b270a6677a"
-  dependencies:
-    firebase "^3.5.2"
-
 react:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/react/-/react-15.4.1.tgz#498e918602677a3983cd0fd206dfe700389a0dd6"
@@ -4068,6 +4062,12 @@ ripemd160@^1.0.0:
 rsvp@3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-3.2.1.tgz#07cb4a5df25add9e826ebc67dcc9fd89db27d84a"
+
+rxjs:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.1.1.tgz#fc48922965bc6c5efbcc0fe46e90a3af64137a7b"
+  dependencies:
+    symbol-observable "^1.0.1"
 
 safe-buffer@^5.0.1:
   version "5.0.1"
@@ -4422,6 +4422,10 @@ svgo@^0.7.0:
     mkdirp "~0.5.1"
     sax "~1.2.1"
     whet.extend "~0.9.9"
+
+symbol-observable@^1.0.1:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
 
 tapable@^0.2.3, tapable@~0.2.3:
   version "0.2.5"
